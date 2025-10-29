@@ -10,3 +10,10 @@ export async function create(data) {
     data,
   });
 }
+
+export async function findById(id) {
+  // example with Prisma or in-memory
+  return prisma.task.findUnique({ where: { id } });
+  // or for in-memory array:
+  // return tasks.find(t => t.id === id);
+}
